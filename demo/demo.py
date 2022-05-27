@@ -133,7 +133,7 @@ def get_output(video_path,
     textsize = cv2.getTextSize(label, cv2.FONT_HERSHEY_DUPLEX, font_scale,
                                1)[0]
     textheight = textsize[1]
-    padding = 10
+    padding = 30
     location = (padding, padding + textheight)
 
     if isinstance(font_color, str):
@@ -142,7 +142,7 @@ def get_output(video_path,
     frames = [np.array(frame) for frame in frames]
     for frame in frames:
         cv2.putText(frame, label, location, cv2.FONT_HERSHEY_DUPLEX,
-                    font_scale, font_color, 1)
+                    1.5, font_color, 1)
 
     # RGB order
     frames = [x[..., ::-1] for x in frames]
